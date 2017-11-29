@@ -13,8 +13,9 @@ public class TravelTracker implements ScanListener {
     static final BigDecimal OFF_PEAK_JOURNEY_PRICE = new BigDecimal(2.40);
     static final BigDecimal PEAK_JOURNEY_PRICE = new BigDecimal(3.20);
 
-    private final List<JourneyEvent> eventLog = new ArrayList<JourneyEvent>();
-    private final Set<UUID> currentlyTravelling = new HashSet<UUID>();
+    //change to public to access from tester
+    public final List<JourneyEvent> eventLog = new ArrayList<JourneyEvent>();
+    public final Set<UUID> currentlyTravelling = new HashSet<UUID>();
 
     public void chargeAccounts() {
         CustomerDatabase customerDatabase = CustomerDatabase.getInstance();
@@ -60,7 +61,7 @@ public class TravelTracker implements ScanListener {
         return roundToNearestPenny(customerTotal);
     }
 
-    private BigDecimal roundToNearestPenny(BigDecimal poundsAndPence) {
+    public BigDecimal roundToNearestPenny(BigDecimal poundsAndPence) {
         return poundsAndPence.setScale(2, BigDecimal.ROUND_HALF_UP);
     }
 

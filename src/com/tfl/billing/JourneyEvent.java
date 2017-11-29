@@ -8,6 +8,7 @@ public abstract class JourneyEvent {
     private final UUID readerId;
     private final long time;
 
+    //adding long time to constructor to test peak and off peak charges
     public JourneyEvent(UUID cardId, UUID readerId) {
         this.cardId = cardId;
         this.readerId = readerId;
